@@ -1,0 +1,48 @@
+package com.seungju.blog.user.dto;
+
+import java.io.Serializable;
+import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Value;
+
+/**
+ * DTO for {@link com.seungju.blog.user.entity.User}
+ */
+public class UserDto {
+
+    @Value
+    @Getter
+    @Setter
+    public static class Request implements Serializable {
+
+        String name;
+
+        String email;
+
+        String username;
+
+        String password;
+
+        String image;
+
+    }
+
+    @Value
+    @Getter
+    @Setter
+    public static class Response implements Serializable {
+
+        UUID id;
+
+        String name;
+
+        String email;
+
+        String username;
+
+        String image;
+
+    }
+
+}
