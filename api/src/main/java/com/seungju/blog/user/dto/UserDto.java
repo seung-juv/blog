@@ -6,15 +6,29 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.Value;
 
-/**
- * DTO for {@link com.seungju.blog.user.entity.User}
- */
 public class UserDto {
 
     @Value
     @Getter
     @Setter
-    public static class Request implements Serializable {
+    public static class Response implements Serializable {
+
+        UUID id;
+
+        String name;
+
+        String email;
+
+        String username;
+
+        String image;
+
+    }
+
+    @Value
+    @Getter
+    @Setter
+    public static class CreateRequest implements Serializable {
 
         String name;
 
@@ -31,17 +45,11 @@ public class UserDto {
     @Value
     @Getter
     @Setter
-    public static class Response implements Serializable {
-
-        UUID id;
-
-        String name;
-
-        String email;
+    public static class GetUserWithUsernameAndPasswordRequest implements Serializable {
 
         String username;
 
-        String image;
+        String password;
 
     }
 

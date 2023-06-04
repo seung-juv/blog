@@ -32,7 +32,7 @@ public class UserController {
       @ApiResponse(responseCode = "201", description = "Successful operation", content = @Content(schema = @Schema(implementation = UserDto.Response.class)))})
   @PostMapping
   public final ResponseEntity<UserDto.Response> createUser(
-      @RequestBody final UserDto.Request request) {
+      @RequestBody final UserDto.CreateRequest request) {
     UserDto.Response response = userService.createUser(request);
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
