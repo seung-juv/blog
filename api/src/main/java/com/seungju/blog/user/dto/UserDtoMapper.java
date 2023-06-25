@@ -9,7 +9,7 @@ public interface UserDtoMapper {
 
     UserDtoMapper INSTANCE = Mappers.getMapper(UserDtoMapper.class);
 
-    User requestToUser(UserDto.CreateRequest request);
+    User requestToUser(UserDto.Create request);
 
     UserDto.Response userToResponse(User user);
 

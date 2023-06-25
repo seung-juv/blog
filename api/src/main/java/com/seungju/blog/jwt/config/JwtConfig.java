@@ -1,4 +1,4 @@
-package com.seungju.blog.config;
+package com.seungju.blog.jwt.config;
 
 import io.jsonwebtoken.security.Keys;
 import java.nio.charset.StandardCharsets;

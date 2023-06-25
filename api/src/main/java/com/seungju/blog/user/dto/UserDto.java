@@ -28,7 +28,7 @@ public class UserDto {
     @Value
     @Getter
     @Setter
-    public static class CreateRequest implements Serializable {
+    public static class Create implements Serializable {
 
         String name;
 
@@ -45,7 +45,7 @@ public class UserDto {
     @Value
     @Getter
     @Setter
-    public static class GetUserWithUsernameAndPasswordRequest implements Serializable {
+    public static class GetUserWithUsernameAndPassword implements Serializable {
 
         String username;
 

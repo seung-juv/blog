@@ -3,6 +3,8 @@ package com.seungju.blog.config;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,13 +26,10 @@ public class SwaggerConfig {
 
   @Bean
   public OpenAPI openAPI() {
-    return new OpenAPI()
-        .components(new Components())
-        .info(new Info()
-            .version(version)
-            .title(title)
-            .description(description)
-            .summary(summary)
-        );
+    return new OpenAPI().components(new Components().addSecuritySchemes("jwt",
+            new SecurityScheme().name("jwt").type(SecurityScheme.Type.HTTP).scheme("bearer")
+                .bearerFormat("JWT")))
+        .info(new Info().version(version).title(title).description(description).summary(summary))
+        .addSecurityItem(new SecurityRequirement().addList("jwt"));
   }
 }

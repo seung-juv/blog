@@ -30,11 +30,8 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
     implementation "org.mapstruct:mapstruct:1.5.2.Final"
     annotationProcessor "org.mapstruct:mapstruct-processor:1.5.2.Final"
-    testAnnotationProcessor "org.mapstruct:mapstruct-processor:1.5.2.Final"
     implementation 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
     annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
 
@@ -43,6 +40,3 @@ dependencies {
     runtimeOnly group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
-}

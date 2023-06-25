@@ -25,15 +25,15 @@ public class RefreshTokenRedisRepository {
     redisTemplate.expire(refreshToken.getRefreshToken(), refreshTokenExpires, TimeUnit.MILLISECONDS);
   }
 
-  public Optional<RefreshToken> findById(final String refreshToken) {
+  public Optional<RefreshToken> findById(final String id) {
     ValueOperations<String, String> valueOperations = redisTemplate.opsForValue();
-    String userId = valueOperations.get(refreshToken);
+    String userId = valueOperations.get(id);
 
     if (userId == null) {
       return Optional.empty();
     }
 
-    return Optional.of(new RefreshToken(refreshToken, UUID.fromString(userId)));
+    return Optional.of(new RefreshToken(id, UUID.fromString(userId)));
   }
 
 }
